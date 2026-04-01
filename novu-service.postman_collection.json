@@ -1,0 +1,78 @@
+{
+  "info": {
+    "name": "Novu Service",
+    "_postman_id": "novu-service-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Trigger - Default Subscriber",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trigger",
+          "host": ["{{baseUrl}}"],
+          "path": ["trigger"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Trigger - Custom Subscriber",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trigger",
+          "host": ["{{baseUrl}}"],
+          "path": ["trigger"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriberId\": \"custom-id\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@example.com\",\n  \"payload\": {\n    \"key\": \"value\"\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Trigger - With Payload Only",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/trigger",
+          "host": ["{{baseUrl}}"],
+          "path": ["trigger"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"payload\": {\n    \"message\": \"Hello from Postman\"\n  }\n}"
+        }
+      }
+    }
+  ]
+}

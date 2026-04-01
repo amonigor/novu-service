@@ -1,0 +1,19 @@
+meta {
+  name: With Payload Only
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/trigger
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "payload": {
+      "message": "Hello from Bruno"
+    }
+  }
+}

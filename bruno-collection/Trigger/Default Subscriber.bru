@@ -1,0 +1,15 @@
+meta {
+  name: Default Subscriber
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/trigger
+  body: json
+  auth: none
+}
+
+body:json {
+  {}
+}

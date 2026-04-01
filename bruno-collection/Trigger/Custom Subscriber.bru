@@ -1,0 +1,23 @@
+meta {
+  name: Custom Subscriber
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/trigger
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "subscriberId": "custom-id",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "payload": {
+      "key": "value"
+    }
+  }
+}
